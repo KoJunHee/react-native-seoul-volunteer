@@ -1,7 +1,9 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
-import Home from './Home'
-import List from './List'
+import { createStackNavigator, NavigationActions } from 'react-navigation';
+import { Button } from 'react-native';
+import Home from './Home/Home'
+import List from './List/List'
+import Filter from './List/Filter'
 
 const RootStack = createStackNavigator(
   {
@@ -13,27 +15,21 @@ const RootStack = createStackNavigator(
         },
       },
     },
-    List: List
+    List: {
+      screen: List,
+    },
+    Filter: {
+      screen: Filter
+    }
   },
   {
     initialRouteName: 'Home',
-
   }
 );
 
 export default class App extends React.Component {
-  state = {
-    navigationTitle: "",
-  };
-
   render() {
     return <RootStack />;
   }
-
-  _setNavigationTitle = title => {
-    this.setState({
-      navigationTitle: title
-    });
-  };
 
 }

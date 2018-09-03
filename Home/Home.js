@@ -7,9 +7,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
                 <Text style={styles.title}>어떤 봉사활동을{"\n"}찾고 계신가요?</Text>
-
                 <Grid style={styles.grid}>
                     <Col>
                         <Row style={styles.row} onPress={() => this.props.navigation.navigate('List', { title: '기술/기능' })}>
@@ -45,7 +43,6 @@ export default class Home extends React.Component {
                         </Row>
                     </Col>
                 </Grid>
-
             </View>
         );
     }

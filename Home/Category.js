@@ -14,14 +14,14 @@ export default class App extends React.Component {
   static PropTypes = {
     title: PropTypes.string.isRequired,
   }
-  
+
   state = {
     title: ''
   }
 
   render() {
-    const {title} = this.props;
-    
+    const { title } = this.props;
+
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
