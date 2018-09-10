@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import ListItem from './ListItem'
 
-export default class bb extends React.Component {
+export default class navigateScreen07 extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-        title: '노력/행정',
+        title: '상담/정보',
         headerTitleStyle: { textAlign: 'center', alignSelf: 'center' },
         headerStyle: {
             backgroundColor: 'white',
@@ -30,6 +30,7 @@ export default class bb extends React.Component {
                         .map(item => (
                             <ListItem
                                 text={item.text}
+                                navigation={this.props.screenProps}
                             />
                         ))}
                 </ScrollView>

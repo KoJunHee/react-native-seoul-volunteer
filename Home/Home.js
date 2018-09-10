@@ -51,10 +51,10 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'white'
     },
     title: {
-        marginTop: 40,
+        marginTop: 100,
         fontSize: 30,
         marginLeft: 20
     },

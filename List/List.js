@@ -1,58 +1,65 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import { Button } from 'react-native';
-import aa from './aa'
-import bb from './bb'
-import cc from './cc'
-import dd from './dd'
-import ee from './ee'
-import ff from './ff'
-import gg from './gg'
-import hh from './hh'
-import ii from './ii'
+import navigateScreen01 from './navigateScreen01'
+import navigateScreen02 from './navigateScreen02'
+import navigateScreen03 from './navigateScreen03'
+import navigateScreen04 from './navigateScreen04'
+import navigateScreen05 from './navigateScreen05'
+import navigateScreen06 from './navigateScreen06'
+import navigateScreen07 from './navigateScreen07'
+import navigateScreen08 from './navigateScreen08'
+import navigateScreen09 from './navigateScreen09'
 
 const RootStack = createMaterialTopTabNavigator(
   {
-    aa: {
-      screen: aa,
+    navigateScreen01: {
+      screen: navigateScreen01
     },
-    bb: {
-      screen: bb,
+    navigateScreen02: {
+      screen: navigateScreen02,
     },
-    cc: {
-      screen: cc,
+    navigateScreen03: {
+      screen: navigateScreen03,
     },
-    dd: {
-      screen: dd,
+    navigateScreen06: {
+      screen: navigateScreen06,
     },
-    ee: {
-      screen: ee,
+    navigateScreen05: {
+      screen: navigateScreen05,
     },
-    ff: {
-      screen: ff,
-    },
-
-    gg: {
-      screen: gg,
+    navigateScreen04: {
+      screen: navigateScreen04,
     },
 
-    hh: {
-      screen: hh,
+    navigateScreen07: {
+      screen: navigateScreen07,
     },
-    ii: {
-      screen: ii,
+
+    navigateScreen08: {
+      screen: navigateScreen08,
+    },
+    navigateScreen09: {
+      screen: navigateScreen09,
     },
   },
   {
     tabBarOptions: {
-      scrollEnabled: true
+      scrollEnabled: true,
+      style: {
+        backgroundColor: 'white',
+      },
+      labelStyle: {
+        size: 12,
+        color: 'black'
+      },
     }
   }
-
 );
 
 
 export default class List extends React.Component {
+
   static navigationOptions = ({ navigation }) => ({
     title: 'List',
     headerTitleStyle: {
@@ -61,14 +68,15 @@ export default class List extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => navigation.navigate('Filter', { title: '기술/기능' })}
+        onPress={() => navigation.navigate('Filter')}
         title='filter'
         color='red'
       />
     ),
-    headerBackTitle: null
+    headerBackTitle: null,
   });
   render() {
-    return <RootStack />;
+    return <RootStack screenProps={this.props.navigation} />;
+
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Button } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import ListItem from './ListItem'
 
-export default class aa extends React.Component {
+export default class navigateScreen01 extends React.Component {
 
     static navigationOptions = ({ navigation }) => ({
         title: '기술/기능',
@@ -17,39 +17,48 @@ export default class aa extends React.Component {
 
     render() {
         return (
-            <View>
-                <ScrollView contentContainerStyle={styles.listItem}>
+            <View styles={styles.container}  >
+                <ScrollView contentContainerStyle={styles.list} >
                     {Object.values([
                         {
-                            text: 'aa'
+                            text: '동대문구'
                         },
                         {
-                            text: 'bb'
+                            text: '서대문구'
                         },
                         {
-                            text: 'cc'
+                            text: '동대문구'
+                        },
+                        {
+                            text: '동대문구'
                         }
                     ])
-                        .reverse()
+                        // .reverse()
                         .map(item => (
-                            <ListItem
+                            <ListItem                                
                                 text={item.text}
-                            />
+                                navigation={this.props.screenProps}
+                                >
+                            </ListItem>
                         ))}
                 </ScrollView>
             </View>
         );
     }
+
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#2E9AFE',
+        backgroundColor: 'white'
+    },
+    list: {
         alignItems: 'center',
-        justifyContent: 'center',
+        marginTop: 10,
+        backgroundColor: 'white'
     },
     listItem: {
-        alignItems: "center"
+        marginTop: 10
     }
 });
